@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "dark" | "outline" | "ghost" | "light";
+type ButtonVariant = "primary" | "dark" | "outline" | "ghost" | "light" | "gold";
 type ButtonSize = "sm" | "md" | "lg";
 
 type CommonProps = {
@@ -18,14 +18,17 @@ type CommonProps = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-500 text-cream-50 hover:bg-brand-600 shadow-glow-brand active:scale-[0.98]",
-  dark: "bg-charcoal text-cream-50 hover:bg-charcoal-700 active:scale-[0.98]",
+    "bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700 text-cream-50 hover:from-brand-600 hover:to-brand-800 shadow-glow-brand active:scale-[0.98]",
+  gold:
+    "bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-charcoal-900 font-bold hover:from-gold-400 hover:to-gold-300 shadow-gold-glow active:scale-[0.98]",
+  dark:
+    "bg-charcoal text-cream-50 hover:bg-charcoal-700 border border-charcoal-700/60 shadow-soft active:scale-[0.98]",
   outline:
-    "border border-charcoal/20 bg-transparent text-charcoal hover:border-brand-500 hover:text-brand-600 active:scale-[0.98]",
+    "border border-charcoal/20 bg-cream-50/50 text-charcoal hover:border-gold-500 hover:text-gold-700 hover:bg-cream-50 active:scale-[0.98]",
   ghost:
     "bg-transparent text-charcoal hover:bg-charcoal/5 active:scale-[0.98]",
   light:
-    "bg-cream-100 text-charcoal hover:bg-cream-200 active:scale-[0.98]",
+    "bg-cream-100 text-charcoal hover:bg-cream-200 border border-cream-200 active:scale-[0.98]",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

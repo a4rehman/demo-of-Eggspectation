@@ -31,10 +31,13 @@ const PRINCIPLES = [
 
 export function ExperienceSection() {
   return (
-    <section className="container py-20 lg:py-28">
+    <section className="container py-20 lg:py-28 relative overflow-hidden">
+      {/* Subtle warm backlight */}
+      <div className="pointer-events-none absolute left-10 top-1/2 -translate-y-1/2 size-96 rounded-full bg-gold-200/20 blur-3xl -z-10" />
+
       <div className="grid items-center gap-14 lg:grid-cols-2">
         <Reveal className="relative order-2 lg:order-1">
-          <div className="relative aspect-[4/4.4] w-full max-w-[480px] overflow-hidden rounded-[2.5rem] shadow-card">
+          <div className="relative aspect-[4/4.4] w-full max-w-[480px] overflow-hidden rounded-[2.5rem] shadow-luxury border border-cream-200/80">
             <Image
               src={EXPERIENCE_IMAGES.craft}
               alt="A table spread with smoothie bowls, waffles, fresh berries and coffee"
@@ -43,7 +46,7 @@ export function ExperienceSection() {
               className="object-cover"
             />
           </div>
-          <div className="absolute -bottom-8 right-0 hidden w-56 overflow-hidden rounded-[1.5rem] border-4 border-cream shadow-card sm:block lg:-right-8">
+          <div className="absolute -bottom-8 right-0 hidden w-56 overflow-hidden rounded-[1.75rem] border-4 border-cream shadow-luxury sm:block lg:-right-8">
             <div className="relative aspect-square">
               <Image
                 src={EXPERIENCE_IMAGES.room}
@@ -54,29 +57,34 @@ export function ExperienceSection() {
               />
             </div>
           </div>
-          <div className="absolute -top-6 -left-6 grid size-32 place-items-center rounded-full bg-brand-500 text-cream-50 shadow-glow-brand sm:size-36">
-            <p className="text-center font-display text-3xl font-semibold italic">
-              Brunch
-              <span className="mt-1 block text-xl font-bold uppercase not-italic tracking-[0.2em] text-cream-50/90">all day</span>
-            </p>
+
+          {/* Luxury Floating Heritage Seal */}
+          <div className="absolute -top-6 -left-6 grid size-32 place-items-center rounded-full bg-gradient-to-br from-charcoal-800 to-charcoal-900 border-2 border-gold-400 text-cream-50 shadow-luxury sm:size-36">
+            <div className="text-center p-2">
+              <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-gold-400">EST. 1993</span>
+              <p className="font-display text-2xl font-semibold italic text-cream-50">
+                Montréal
+              </p>
+              <span className="mt-0.5 block text-[9px] font-bold uppercase tracking-[0.16em] text-cream-100/70">Heritage Craft</span>
+            </div>
           </div>
         </Reveal>
 
         <div className="order-1 lg:order-2">
           <SectionHeading
-            eyebrow="The experience"
-            title="A neighbourhood restaurant with a griddle at its heart"
-            description="Eggspectation began with one obsession: do breakfast with the care dinner usually gets. Twenty years later, that idea has grown into all-day brunch rooms where the coffee is taken seriously and nobody rushes you out."
+            eyebrow="The Heritage"
+            title="A neighbourhood institution with a roaring griddle at its heart"
+            description="Eggspectation began with one simple obsession: treat the morning meal with the culinary rigor dinner usually gets. Over 30 years later, that commitment has built a beloved tradition of all-day brunch, custom roasted beans, and warm rooms that welcome you to linger."
           />
-          <ul className="mt-10 space-y-7">
+          <ul className="mt-10 space-y-6">
             {PRINCIPLES.map((principle, i) => (
-              <li key={principle.title} className="flex gap-5">
-                <Reveal delay={0.08 * i} className="flex gap-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-cream-100 text-brand-600 shadow-soft">
+              <li key={principle.title} className="group rounded-2xl p-3 transition-colors hover:bg-cream-100/60">
+                <Reveal delay={0.08 * i} className="flex gap-5 items-start">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-cream-50 border border-gold-400/30 text-gold-600 shadow-soft transition-transform group-hover:scale-105">
                     <principle.icon className="size-5" aria-hidden />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold tracking-tight">
+                    <h3 className="font-display text-lg font-semibold tracking-tight text-charcoal group-hover:text-brand-700 transition-colors">
                       {principle.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-charcoal-50/80">

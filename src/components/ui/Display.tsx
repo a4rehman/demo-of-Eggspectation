@@ -26,12 +26,15 @@ export function SectionHeading({
     >
       <span
         className={cn(
-          "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em]",
-          dark ? "text-brand-300" : "text-brand-600"
+          "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.24em]",
+          dark ? "text-gold-400" : "text-gold-600"
         )}
       >
-        <span className={cn("h-px w-8", dark ? "bg-brand-300/60" : "bg-brand-400")} aria-hidden />
-        {eyebrow}
+        <span className={cn("h-px w-8", dark ? "bg-gold-400/60" : "bg-gold-500")} aria-hidden />
+        <span>{eyebrow}</span>
+        {align === "center" && (
+          <span className={cn("h-px w-8", dark ? "bg-gold-400/60" : "bg-gold-500")} aria-hidden />
+        )}
       </span>
       <h2
         className={cn(
@@ -45,7 +48,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mt-4 text-[15px] leading-relaxed sm:text-base",
-            dark ? "text-cream-100/70" : "text-charcoal-50"
+            dark ? "text-cream-100/75" : "text-charcoal-50/85"
           )}
         >
           {description}
@@ -63,13 +66,15 @@ export function RatingStars({
   className?: string;
 }) {
   return (
-    <span role="img" className={cn("inline-flex items-center gap-0.5", className)} aria-label={`Rated ${rating} out of 5`}>
+    <span role="img" className={cn("inline-flex items-center gap-1", className)} aria-label={`Rated ${rating} out of 5`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
           className={cn(
             "size-4",
-            i < rating ? "fill-brand-500 text-brand-500" : "fill-cream-200 text-cream-200"
+            i < rating
+              ? "fill-gold-400 text-gold-400 drop-shadow-[0_1px_3px_rgba(201,148,47,0.4)]"
+              : "fill-cream-200/40 text-cream-200/60"
           )}
           aria-hidden
         />

@@ -27,28 +27,34 @@ export function NewsletterSection({ dark = false }: { dark?: boolean }) {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <span className={cn(
-              "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em]",
-              dark ? "text-brand-300" : "text-brand-600"
+              "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.24em]",
+              dark ? "text-gold-400" : "text-brand-600"
             )}>
-              <Mail className="size-4" aria-hidden /> The Sunday Letter
+              <Mail className="size-4 text-gold-400" aria-hidden /> The Sunday Dispatch
             </span>
             <h2
               className={cn(
-                "mt-4 font-display text-3xl font-medium tracking-tight text-balance sm:text-5xl",
+                "mt-4 font-display text-4xl font-medium tracking-tight text-balance sm:text-5xl",
                 dark ? "text-cream-50" : "text-charcoal"
               )}
             >
-              Get our specials before everyone else
+              First invitations to tastings & seasonal menus
             </h2>
             <p
               className={cn(
-                "mx-auto mt-4 max-w-md text-sm leading-relaxed sm:text-base",
-                dark ? "text-cream-100/70" : "text-charcoal-50/80"
+                "mx-auto mt-4 max-w-lg text-sm leading-relaxed sm:text-base",
+                dark ? "text-cream-100/75" : "text-charcoal-50/80"
               )}
             >
-              Seasonal plates, mimosa-holiday schedules and the occasional
-              secret-menu drop. Once a week, worth opening.
+              Curated Sunday reading: newly harvested seasonal plates, barista roastery drops,
+              and private table openings before the public calendar.
             </p>
+
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-cream-100/60">
+              <span className="flex items-center gap-1.5">✦ Once a week dispatch</span>
+              <span className="flex items-center gap-1.5">✦ VIP table reservation access</span>
+              <span className="flex items-center gap-1.5">✦ Unsubscribe anytime</span>
+            </div>
 
             {status === "success" ? (
               <p

@@ -31,6 +31,25 @@ npm run typecheck
 
 ## Tech stack
 
+---
+
+## Gold Theme Enhancements
+
+The UI has been refreshed with a **luxurious gold accent theme**:
+- Added a `gold` color palette with multiple shades in `tailwind.config.ts`.
+- Introduced utility classes in `src/app/globals.css`:
+  - `.gold-gradient-text` – applies a shimmering gold gradient to text.
+  - `.gold-gradient-text-light` – lighter variant for secondary headings.
+  - `.glass-panel` / `.glass-panel-dark` – backdrop‑filter glass‑like panels used across cards and sections.
+  - `.luxury-gradient-card` – background gradient for premium cards.
+- Updated the `Button` component with a `gold` variant for prominent call‑to‑actions.
+
+These utilities can be reused throughout the project to maintain visual consistency and enable fast theming.
+
+---
+
+## Tech stack
+
 | Layer | Choice |
 | --- | --- |
 | Framework | Next.js (App Router) + React 19 |

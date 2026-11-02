@@ -20,13 +20,13 @@ export function Footer() {
   const pathname = usePathname();
   if (pathname?.startsWith("/admin")) return null;
   return (
-    <footer className="bg-charcoal text-cream-100">
+    <footer className="bg-charcoal-900 border-t border-gold-500/20 text-cream-100">
       <div className="container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:py-20">
         <div>
           <Logo inverted />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream-100/65">
-            A contemporary restaurant for people who take breakfast seriously —
-            from first pour to last plate, morning into night.
+          <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream-100/70">
+            An artisanal culinary institution born in Montréal. Celebrating all-day
+            brunch, slow-simmered craft, and morning moments that linger.
           </p>
           <div className="mt-6 flex gap-3">
             {[
@@ -44,7 +44,7 @@ export function Footer() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={label}
-                className="flex size-10 items-center justify-center rounded-full bg-cream-100/10 transition hover:bg-brand-500"
+                className="flex size-10 items-center justify-center rounded-full bg-cream-100/10 text-cream-100 border border-cream-100/15 transition hover:bg-gold-500 hover:text-charcoal-900 hover:border-gold-400"
               >
                 <Icon className="size-4" aria-hidden />
               </a>
@@ -54,7 +54,7 @@ export function Footer() {
         </div>
 
         <nav aria-label="Footer">
-          <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-brand-300">
+          <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold-400">
             Explore
           </h3>
           <ul className="mt-5 space-y-3">
@@ -62,7 +62,7 @@ export function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-cream-100/70 transition hover:text-cream-50"
+                  className="text-sm text-cream-100/70 transition hover:text-gold-300"
                 >
                   {link.label}
                 </Link>
@@ -72,14 +72,14 @@ export function Footer() {
         </nav>
 
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-brand-300">
+          <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold-400">
             Opening hours
           </h3>
           <ul className="mt-5 space-y-3 text-sm text-cream-100/70">
             {PLACEHOLDER_CONTACT.hours.map((row) => (
               <li key={row.days} className="flex items-start justify-between gap-4">
                 <span className="flex items-start gap-2">
-                  <Clock className="mt-0.5 size-3.5 shrink-0 text-cream-100/40" aria-hidden />
+                  <Clock className="mt-0.5 size-3.5 shrink-0 text-gold-400/60" aria-hidden />
                   {row.days}
                 </span>
                 <span className="shrink-0 tabular-nums">{row.time}</span>
@@ -89,20 +89,20 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.22em] text-brand-300">
+          <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold-400">
             Visit us
           </h3>
           <ul className="mt-5 space-y-4 text-sm text-cream-100/70">
             <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-cream-100/40" aria-hidden />
+              <MapPin className="mt-0.5 size-4 shrink-0 text-gold-400/60" aria-hidden />
               {PLACEHOLDER_CONTACT.address}
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="size-4 shrink-0 text-cream-100/40" aria-hidden />
+              <Phone className="size-4 shrink-0 text-gold-400/60" aria-hidden />
               {PLACEHOLDER_CONTACT.phone}
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="size-4 shrink-0 text-cream-100/40" aria-hidden />
+              <Mail className="size-4 shrink-0 text-gold-400/60" aria-hidden />
               {PLACEHOLDER_CONTACT.email}
             </li>
           </ul>
@@ -111,11 +111,10 @@ export function Footer() {
 
       <div className="border-t border-cream-100/10">
         <div className="container flex flex-col items-center justify-between gap-3 py-6 text-xs text-cream-100/45 sm:flex-row">
-          <p>© 2026 Eggspectation — demonstration website. All rights reserved.</p>
+          <p>© 2026 Eggspectation — artisanal demonstration website. All rights reserved.</p>
           <p>
-            Designed & built by{" "}
-            <span className="font-semibold text-cream-100/80">100Solutionz</span> as
-            a proposal demo.
+            Designed & built with{" "}
+            <span className="font-semibold text-gold-300/80">Gastronomy UI System</span>.
           </p>
         </div>
       </div>

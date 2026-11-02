@@ -63,4 +63,35 @@
   .shadow-glow-brand {
     box-shadow: 0 10px 30px -10px rgb(206 91 23 / 0.45);
   }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #A8761E 0%, #C9942F 45%, #8E3B0F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-gradient-text-light {
+    background: linear-gradient(135deg, #FDFBF7 0%, #EED18E 50%, #C9942F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-panel {
+    background: rgba(253, 252, 250, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(227, 212, 191, 0.6);
+  }
+
+  .glass-panel-dark {
+    background: rgba(33, 27, 20, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 148, 47, 0.22);
+  }
+
+  .luxury-gradient-card {
+    background: linear-gradient(145deg, #2A231B 0%, #1D1711 100%);
+    border: 1px solid rgba(201, 148, 47, 0.2);
+  }
 }

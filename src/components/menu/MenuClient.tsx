@@ -73,34 +73,37 @@ export function MenuClient() {
       {/* Page heading */}
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-brand-600">
-            <span className="h-px w-8 bg-brand-400" aria-hidden /> The full menu
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.24em] text-gold-600">
+            <span className="h-px w-8 bg-gold-500" aria-hidden /> The Culinary Collection
           </span>
-          <h1 className="mt-4 font-display text-4xl font-medium tracking-tight text-balance sm:text-6xl">
+          <h1 className="mt-4 font-display text-4xl font-medium tracking-tight text-balance sm:text-6xl text-charcoal">
             Crafted for every
-            <span className="italic text-brand-600"> table, hour & craving</span>
+            <span className="italic gold-gradient-text font-semibold"> table, hour & craving</span>
           </h1>
+          <p className="mt-3 text-sm text-charcoal-50/80 max-w-lg">
+            From our legendary buttermilk stacks and organic eggs Benedicts to stone-ground bowls and specialty roaster sips.
+          </p>
         </div>
         <div className="relative w-full md:w-80">
-          <Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-charcoal-50/75" aria-hidden />
+          <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-charcoal-50/60" aria-hidden />
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search dishes…"
+            placeholder="Search our dishes & sips…"
             aria-label="Search the menu"
-            className="h-12 w-full rounded-full border border-cream-300 bg-cream-50 pl-11 pr-10 text-sm font-medium outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-200"
+            className="h-12 w-full rounded-full border border-cream-300 bg-cream-50 pl-11 pr-10 text-sm font-medium outline-none shadow-soft transition focus:border-gold-500 focus:ring-2 focus:ring-gold-200"
           />
         </div>
       </div>
 
       {/* Category tabs */}
-      <div className="sticky top-[76px] z-30 -mx-2 mt-8 scroll-mt-28 bg-cream px-2 pb-2 pt-1">
-        <div className="scrollbar-hide flex gap-2 overflow-x-auto pb-2">
+      <div className="sticky top-[78px] z-30 -mx-2 mt-8 scroll-mt-28 bg-cream/95 backdrop-blur-md px-2 pb-3 pt-2 border-b border-cream-200/80">
+        <div className="scrollbar-hide flex gap-2 overflow-x-auto pb-1">
           <CategoryTab
             active={category === "all"}
             onClick={() => setCategory("all")}
-            label="All dishes"
+            label="All Creations"
           />
           {MENU_CATEGORIES.map((cat) => (
             <CategoryTab
@@ -114,9 +117,9 @@ export function MenuClient() {
       </div>
 
       {/* Dietary filters */}
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="mr-1 flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-charcoal-50/75">
-          <SlidersHorizontal className="size-3.5" aria-hidden /> Filters
+      <div className="mt-5 flex flex-wrap items-center gap-2">
+        <span className="mr-1 flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] text-charcoal-50/80">
+          <SlidersHorizontal className="size-3.5 text-gold-600" aria-hidden /> Filters:
         </span>
         {DIETARY_FILTERS.map((diet) => (
           <button
@@ -125,10 +128,10 @@ export function MenuClient() {
             onClick={() => toggleDiet(diet.id)}
             aria-pressed={diets.includes(diet.id)}
             className={cn(
-              "rounded-full border px-3.5 py-1.5 text-xs font-bold transition",
+              "rounded-full border px-3.5 py-1.5 text-xs font-bold transition-all duration-200",
               diets.includes(diet.id)
-                ? "border-brand-500 bg-brand-500 text-cream-50"
-                : "border-cream-300 bg-cream-50 text-charcoal-600 hover:border-brand-300 hover:text-brand-700"
+                ? "border-charcoal bg-charcoal text-cream-50 shadow-soft"
+                : "border-cream-300 bg-cream-50 text-charcoal-600 hover:border-gold-400 hover:text-gold-700"
             )}
           >
             {diet.label}
@@ -138,9 +141,9 @@ export function MenuClient() {
           <button
             type="button"
             onClick={resetFilters}
-            className="ml-1 inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-charcoal-50/70 transition hover:text-brand-600"
+            className="ml-2 inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-bold text-brand-600 transition hover:text-brand-700 hover:bg-brand-50"
           >
-            <X className="size-3.5" aria-hidden /> Clear all
+            <X className="size-3.5" aria-hidden /> Clear filters
           </button>
         )}
       </div>

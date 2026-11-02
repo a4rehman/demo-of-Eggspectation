@@ -45,7 +45,7 @@ export function MenuCategories() {
               <StaggerItem key={category.id}>
                 <Link
                   href={`/menu?category=${category.id}`}
-                  className="group relative block overflow-hidden rounded-[1.75rem] bg-charcoal shadow-soft transition-shadow duration-500 hover:shadow-card"
+                  className="group relative block overflow-hidden rounded-[2rem] bg-charcoal-900 border border-charcoal-700/60 shadow-soft transition-all duration-500 hover:shadow-card-hover hover:-translate-y-1 hover:border-gold-400/40"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -53,25 +53,25 @@ export function MenuCategories() {
                       alt={category.tagline}
                       fill
                       sizes="(min-width: 1024px) 420px, 92vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/25 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-transparent" />
                   </div>
                   <div className="relative -mt-16 p-6">
                     <div className="flex items-center justify-between gap-3">
-                      <span className="flex size-11 items-center justify-center rounded-full bg-brand-500/20 text-brand-300 backdrop-blur transition-colors group-hover:bg-brand-500 group-hover:text-cream-50">
+                      <span className="flex size-12 items-center justify-center rounded-2xl bg-gold-500/20 text-gold-300 border border-gold-400/30 backdrop-blur transition-all duration-300 group-hover:bg-gold-500 group-hover:text-cream-50 group-hover:shadow-gold-glow">
                         <Icon className="size-5" aria-hidden />
                       </span>
-                      <span className="rounded-full bg-cream-50/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-cream-100/80 backdrop-blur">
+                      <span className="rounded-full bg-cream-50/15 border border-cream-50/20 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-gold-200 backdrop-blur">
                         {category.count} dishes
                       </span>
                     </div>
-                    <h3 className="mt-4 font-display text-xl font-semibold tracking-tight text-cream-50">
+                    <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight text-cream-50 transition-colors group-hover:text-gold-200">
                       {category.name}
                     </h3>
-                    <p className="mt-1 text-sm text-cream-100/65">{category.tagline}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-300 transition-all duration-300 group-hover:gap-3">
-                      Explore collection →
+                    <p className="mt-1.5 text-sm text-cream-100/70">{category.tagline}</p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-gold-400 transition-all duration-300 group-hover:gap-3 group-hover:text-gold-300">
+                      Explore Collection →
                     </span>
                   </div>
                 </Link>

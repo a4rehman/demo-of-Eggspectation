@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -39,11 +40,15 @@ function todayISO(): string {
 }
 
 export function ReservationClient() {
+  const searchParams = useSearchParams();
+  const initialGuests = Number(searchParams.get("guests")) || 2;
+  const initialTime = searchParams.get("time") || "";
+
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [locationId, setLocationId] = useState(LOCATIONS[0].id);
   const [date, setDate] = useState(todayISO());
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(2);
+  const [time, setTime] = useState(initialTime);
+  const [guests, setGuests] = useState(initialGuests);
   const [occasion, setOccasion] = useState(OCCASIONS[0]);
   const [form, setForm] = useState({ name: "", email: "", phone: "", notes: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});

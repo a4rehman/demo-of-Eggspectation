@@ -1,32 +1,37 @@
-const WORDS = [
-  "Legendary pancakes",
-  "Estate fries",
-  "Latte art",
-  "Bottomless mimosas",
-  "Cast-iron skillets",
-  "Fresh-pressed juice",
-  "Berry hand pies",
-  "Soft-yolk toasts",
+const HIGHLIGHTS = [
+  "MONTREAL HERITAGE EST. 1993",
+  "LEGENDARY BUTTERMILK PANCAKES",
+  "SINGLE-ORIGIN ARTISAN ROASTS",
+  "ALL-DAY BRUNCH WITHOUT A CLOCK",
+  "CAST-IRON SKILLET BENEDICTS",
+  "FARM-FRESH PASTURE-RAISED EGGS",
+  "PURE VERMONT MAPLE SYRUP",
+  "SCRATCH-MADE BRIOCHE & PASTRIES",
+  "WEEKEND BOTTOMLESS MIMOSAS",
 ];
 
 export function TickerStrip() {
   return (
-    <div className="border-y border-charcoal/10 bg-brand-500 py-3.5">
+    <div className="relative overflow-hidden border-y border-gold-500/25 bg-charcoal-900 py-4 text-cream-100 shadow-soft">
+      {/* Subtle warm ember glow on left and right */}
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-charcoal-900 to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-charcoal-900 to-transparent z-10" />
+
       <div className="flex overflow-hidden" aria-hidden>
         <div className="animate-marquee flex shrink-0 items-center gap-10 pr-10">
-          {[...WORDS, ...WORDS].map((word, i) => (
+          {[...HIGHLIGHTS, ...HIGHLIGHTS].map((item, i) => (
             <span
               key={i}
-              className="flex shrink-0 items-center gap-10 whitespace-nowrap font-display text-sm font-semibold italic tracking-wide text-cream-50"
+              className="flex shrink-0 items-center gap-10 whitespace-nowrap font-display text-xs font-semibold uppercase tracking-[0.22em] text-cream-100/90"
             >
-              {word}
-              <span className="size-1.5 rounded-full bg-cream-50/50" />
+              <span>{item}</span>
+              <span className="text-gold-400 drop-shadow-[0_0_8px_rgba(201,148,47,0.8)]">✦</span>
             </span>
           ))}
         </div>
       </div>
       <p className="sr-only">
-        Legendary pancakes, estate fries, latte art, bottomless mimosas, cast-iron skillets, fresh-pressed juice, berry hand pies and soft-yolk toasts.
+        Montreal Heritage Est. 1993, Legendary Buttermilk Pancakes, Single-Origin Artisan Roasts, All-Day Brunch, Cast-Iron Skillet Benedicts, Farm-Fresh Pasture-Raised Eggs.
       </p>
     </div>
   );

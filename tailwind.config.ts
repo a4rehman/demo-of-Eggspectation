@@ -49,6 +49,17 @@ const config: Config = {
           600: "#5C7558",
           700: "#495E47",
         },
+        gold: {
+          50: "#FDFBF7",
+          100: "#FBF3DE",
+          200: "#F6E5BC",
+          300: "#EED18E",
+          400: "#E2B85A",
+          500: "#C9942F",
+          600: "#A8761E",
+          700: "#855816",
+          800: "#6B4413",
+        },
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
@@ -57,7 +68,10 @@ const config: Config = {
       boxShadow: {
         soft: "0 2px 28px -8px rgb(33 27 20 / 0.10)",
         card: "0 1px 2px rgb(33 27 20 / 0.05), 0 16px 40px -20px rgb(33 27 20 / 0.22)",
+        "card-hover": "0 20px 48px -12px rgb(33 27 20 / 0.22), 0 0 0 1px rgb(201 148 47 / 0.18)",
         lift: "0 4px 12px -2px rgb(33 27 20 / 0.08), 0 24px 56px -24px rgb(33 27 20 / 0.30)",
+        luxury: "0 24px 64px -16px rgb(23 18 13 / 0.38), 0 0 0 1px rgb(255 255 255 / 0.08)",
+        "gold-glow": "0 10px 35px -8px rgb(201 148 47 / 0.45)",
       },
       keyframes: {
         marquee: {
@@ -68,10 +82,15 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         marquee: "marquee 36s linear infinite",
         floaty: "floaty 7s ease-in-out infinite",
+        shimmer: "shimmer 8s ease-in-out infinite",
       },
     },
   },
